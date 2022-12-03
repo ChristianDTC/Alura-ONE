@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<h1>Juego Adivinar</h1>
+<br/>
+
+<script>
+    function saltarLinea(){
+        document.write("<br>");
+    }
+    function imprimir(arg){
+        document.write(arg);
+        saltarLinea();
+    }
+    function imc(peso,altura){
+        return peso / (altura * altura);
+    }
+    
+
+    var nombre = prompt("Ingrese su Nombre");
+    var numeroAdivinar = Math.round(Math.random()*10);
+    var numeroElegido = parseInt(prompt(nombre + ", Ingresa un número entre 0 y 10"));
+    
+        
+    if (numeroElegido === numeroAdivinar){
+        imprimir(nombre + ", Acertaste");
+    }else {
+        imprimir(nombre + ", no acertaste, el número era: " + numeroAdivinar)
+    }
+
+</script>
