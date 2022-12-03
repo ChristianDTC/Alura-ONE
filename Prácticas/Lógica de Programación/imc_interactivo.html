@@ -19,8 +19,22 @@
     var nombre = prompt("Ingrese su Nombre");
     var peso = prompt(nombre + ", Ingresa tu Peso en Kilogramos");
     var altura = prompt(nombre + ", Ingresa tu Altura en metros");
+    var imc1 = imc(peso,altura);
         
-    imprimir(nombre + ", tu IMC es de: " + imc(peso,altura));
-    
+    imprimir(nombre + ", tu IMC es de: " + imc1);
+    saltarLinea();
+
+    if (imc1 < 18.5){
+        imprimir("Usted tiene Bajo Peso");
+    }
+    if (imc1 >= 18.5 && imc1 < 25){
+        imprimir("Usted tiene Peso Normal");
+    }
+    if (imc1 >= 25 && imc1 < 30){
+        imprimir("Usted tiene Sobrepeso");
+    }
+    if (imc1 >= 30){
+        imprimir("Usted tiene Obesidad");
+    }
 
 </script>
