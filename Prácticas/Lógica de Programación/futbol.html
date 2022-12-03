@@ -19,5 +19,17 @@
     totalPuntos = victoria * 3 + empates;
 
     imprimir("El total de puntos de " + equipo + " es de: " + totalPuntos);
+    saltarLinea();
+
+    var puntosAnterior = 30;
+    if (totalPuntos > puntosAnterior){
+        imprimir(equipo + " obtuvo " + (totalPuntos - puntosAnterior) + " puntos más que la temperada pasada");
+    }
+    if (totalPuntos < puntosAnterior){
+        imprimir(equipo + " obtuvo " + Math.abs(totalPuntos - puntosAnterior) + " puntos menos que la temperada pasada");
+    }
+    if (totalPuntos === puntosAnterior){
+        imprimir(equipo + " obtuvo la misma cantidad de puntos que la temperada pasada");
+    }
 
 </script>
