@@ -13,30 +13,35 @@ JavaScript
 <br>
 
 <script>
+
+    var saltoLinea = "<br>";
+
+    /*esto es un pop up*/
     alert("La edad de Christian es ...")
     alert("?")
-    /*esto es un pop up*/
     document.write("<br>")
 
+    /*esto es texto*/
     document.write("La edad de Christian es ...<br>")
     document.write("?")
-    document.write("<br>")
-    /*esto es texto*/
-    document.write("<br>")
+    document.write(saltoLinea)
+    
+    /*para el salto de línea puedo usar el <br> o saltoLinea siendo este más aficiente*/
 
-
+    document.write(saltoLinea)
     var anio = 2022;
     document.write("Christian tiene: " + (anio - 1986) + " años")
-    document.write("<br>")
+    document.write(saltoLinea)
     document.write("Belen tiene: " + (anio - 1989) + " años")
 
-    document.write("<br>")
+    saltoLinea = "<br><br>"; /*ahora tiene 2 saltos de línea*/
+    document.write(saltoLinea)
     var edadChristian = 36;
     var edadBelen = 33;
     var edadCandy = 1;
     var promedio = 0;
     promedio = Math.round((edadChristian+edadBelen+edadCandy) / 3);
-    document.write("<br>")
+    document.write(saltoLinea)
     document.write("El promedio de todas las edades es de: <br>" + promedio)
 
     
