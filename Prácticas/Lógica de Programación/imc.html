@@ -14,6 +14,10 @@
     function imc(peso1,altura1,nombre){
         imprimir("El IMC de " + nombre + " es de: " + Math.round(peso1 / (altura1*altura1)));
     }
+    function imc2(peso2, altura2){
+        return peso2 / (altura2 * altura2);
+    }
+
 
     var peso = 92;
     var altura = 1.71;
@@ -25,4 +29,12 @@
     imprimir("<hr>")
     
     imc(92, 1.71, "Christian");
+    imc(80, 1.65, "Belen");
+    saltarLinea();
+
+    imprimir("<hr>")
+
+    imprimir("El IMC Promedio de la familia es de: " + 
+    Math.round(( imc2 (30, 1.50)+ imc2 (20, 1.30)+ imc2 (100, 1.85)+ imc2 (75, 1.567)) / 4));
+
 </script>
