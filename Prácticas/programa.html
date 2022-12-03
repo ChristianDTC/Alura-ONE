@@ -13,7 +13,16 @@ JavaScript
 <br>
 
 <script>
+    function saltarLinea(){
+        document.write("<br>");
+    }
+    function imprimir(arg){
+        document.write(arg);
+    }
 
+    saltarLinea();
+    imprimir("Esto se imprime con la función imprimir");
+    saltarLinea();
     var saltoLinea = "<br>";
 
     /*esto es un pop up*/
@@ -25,24 +34,26 @@ JavaScript
     document.write("La edad de Christian es ...<br>")
     document.write("?")
     document.write(saltoLinea)
-    
-    /*para el salto de línea puedo usar el <br> o saltoLinea siendo este más aficiente*/
+    /*para el salto de línea puedo usar el <br> o saltoLinea siendo este más eficiente*/
 
-    document.write(saltoLinea)
-    var anio = 2022;
-    document.write("Christian tiene: " + (anio - 1986) + " años")
-    document.write(saltoLinea)
-    document.write("Belen tiene: " + (anio - 1989) + " años")
 
     saltoLinea = "<br><br>"; /*ahora tiene 2 saltos de línea*/
     document.write(saltoLinea)
+    /*con la función imprimir creada puedo optar por usar document.write o imprimir*/
+    var anio = 2022;
+    imprimir("Christian tiene: " + (anio - 1986) + " años")
+    imprimir(saltoLinea)
+    imprimir("Belen tiene: " + (anio - 1989) + " años")
+
+    
+    saltarLinea(); /*puede modificar la acción con una función*/
     var edadChristian = 36;
     var edadBelen = 33;
     var edadCandy = 1;
     var promedio = 0;
     promedio = Math.round((edadChristian+edadBelen+edadCandy) / 3);
-    document.write(saltoLinea)
-    document.write("El promedio de todas las edades es de: <br>" + promedio)
+    saltarLinea();
+    imprimir("El promedio de todas las edades es de: <br>" + promedio)
 
     
     
