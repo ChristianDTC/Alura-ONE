@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<h1>Indice de Masa Corporal</h1>
+<br/>
+
+<script>
+    function saltarLinea(){
+        document.write("<br>");
+    }
+    function imprimir(arg){
+        document.write(arg);
+        saltarLinea();
+    }
+    function imc(peso1,altura1,nombre){
+        imprimir("El IMC de " + nombre + " es de: " + Math.round(peso1 / (altura1*altura1)));
+    }
+
+    var peso = 92;
+    var altura = 1.71;
+    var imc1 = peso / (altura * altura);
+
+    imprimir("El IMC de la persona es de: " + imc1)
+    saltarLinea();
+
+    imprimir("<hr>")
+    
+    imc(92, 1.71, "Christian");
+</script>
