@@ -1,0 +1,40 @@
+<!--Usando la instrucción while, imprime todos los números pares del 1 al 100 
+    y al final imprime la palabra "FIN".-->
+
+<meta charset="UTF-8">
+
+<h1>Números Pares</h1>
+<br/>
+
+<script>
+    function saltarLinea(){
+        document.write("<br><br>");
+    }
+    function imprimir(arg){
+        document.write(arg);
+        saltarLinea();
+    }
+
+    var control = 1;
+
+    imprimir("OPCION 1")
+    while(control <=100){
+
+        if (control % 2 === 0){
+            imprimir(" Número par " + control);
+        }
+        control++;
+    }
+    saltarLinea();
+
+    imprimir("OPCION 2")
+    control = 2;
+    while(control <=100){
+
+        imprimir(" Número par " + control);
+        control += 2;
+    }
+    imprimir("FIN")
+
+
+</script>
