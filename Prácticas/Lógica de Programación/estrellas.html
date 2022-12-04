@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<h1>Juego Adivinar</h1>
+<br/>
+
+<script>
+    function saltarLinea(){
+        document.write("<br>");
+    }
+    function imprimir(arg){
+        document.write(arg);
+        saltarLinea();
+    }
+
+    for(var filas = 1; filas <= 8; filas++){
+
+        for(var columnas = 1; columnas <= 10; columnas++){
+
+            document.write("*");
+        }
+        saltarLinea();
+    }
+
+    saltarLinea();
+    imprimir("FIN")
+</script>
