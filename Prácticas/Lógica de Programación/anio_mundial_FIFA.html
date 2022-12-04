@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<h1>Año Mundial FIFA</h1>
+<br/>
+
+<script>
+    function saltarLinea(){
+        document.write("<br><br>");
+    }
+    function imprimir(arg){
+        document.write(arg);
+        saltarLinea();
+    }
+
+    var anioMundial = 1930;
+    var limite = parseInt(prompt("Ingrese hasta que año quiere calcular"));
+
+     while (anioMundial <= limite){
+        
+        if (anioMundial == 1978 || anioMundial == 1986 || anioMundial == 2022){
+            imprimir(anioMundial + " ¡¡¡ARGENTINA CAMPEON DEL MUNDO!!! " )
+        }else{
+            imprimir("Hubo un mundial de FIFA en el año " + anioMundial);
+        }
+        anioMundial += 4;
+        
+
+    }
+
+</script>

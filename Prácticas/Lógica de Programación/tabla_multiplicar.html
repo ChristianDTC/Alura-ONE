@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<h1>Año Mundial FIFA</h1>
+<br/>
+
+<script>
+    function saltarLinea(){
+        document.write("<br><br>");
+    }
+    function imprimir(arg){
+        document.write(arg);
+        saltarLinea();
+    }
+
+    var tabla = parseInt(prompt("Ingrese la tabla que quiere saber"));
+
+    var multiplicador = 0;
+    imprimir("CON WHILE")
+    while (multiplicador <= 10){
+        
+        imprimir(tabla + " x " + multiplicador + " = " + tabla * multiplicador);
+        multiplicador ++;
+    }
+    saltarLinea();
+
+    imprimir("CON FOR")
+    for (var multiplicador = 0; multiplicador <= 10; multiplicador ++){
+        
+        imprimir(tabla + " x " + multiplicador + " = " + tabla * multiplicador);
+    }
+
+</script>
