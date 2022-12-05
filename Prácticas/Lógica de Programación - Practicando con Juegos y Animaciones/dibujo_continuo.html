@@ -1,0 +1,93 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0, 0, 600, 400);
+   
+
+    var puedoDibujar = false;
+    var xRojo = 0;
+    var xAzul = 20;
+    var xAmarillo = 40;
+    var yPosicion = 0;
+    var tamanioCuadrados = 20;
+    
+
+    function dibujarCirculo(evento) {
+
+        if(puedoDibujar) {
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+            pincel.fillStyle = colores[indice];
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            pincel.fill();
+        }
+
+    }
+
+    pantalla.onmousemove = dibujarCirculo;
+
+    function habilitarDibujar() {
+
+        puedoDibujar = true;
+    }
+
+    function deshabilitarDibujar() {
+
+        puedoDibujar = false;
+    }
+
+    function dibujarColor(x,y,tamanio,color){
+        
+        var pantalla = document.querySelector("canvas")
+        var pincel = pantalla.getContext("2d")
+    
+        pincel.fillStyle = color;
+        pincel.fillRect(x,y,tamanio,tamanio);
+        pincel.fill();
+        pincel.strokeStyle = "black"; 
+        pincel.strokeRect(x,y,tamanio,tamanio); 
+        
+    }
+
+    function dibujarPaleta(){
+        dibujarColor(xRojo,yPosicion,tamanioCuadrados,"red");
+        dibujarColor(xAzul,yPosicion,tamanioCuadrados,"blue");
+        dibujarColor(xAmarillo,yPosicion,tamanioCuadrados,"yellow");
+    }
+
+    function alterarColor(evento) {
+
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        if( (x <= pincel.fillRect(10)) && 
+        (x >= pincel.fillRect(10)) && 
+        (y < yAleatorio + radio) && 
+        (y > yAleatorio - radio)){
+
+        }
+
+    }
+
+    function limiarPantalla(){
+
+        pincel.clearRect(0,0,600,400);
+        dibujarPaleta();
+    }
+
+    dibujarPaleta();
+
+    pantalla.oncontextmenu = limiarPantalla;
+
+    pantalla.onmousedown = habilitarDibujar;
+
+    pantalla.onmouseup = deshabilitarDibujar;
+
+    
+
+</script>
