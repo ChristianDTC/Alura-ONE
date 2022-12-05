@@ -1,0 +1,38 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    function diseniarCirculo(x,y,radio){
+
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill();
+    }
+
+    function limiarPantalla(){
+
+        pincel.clearRect(0,0,600,400);
+        // limpia la pizarra
+    }
+
+    function actualizarPantalla(){
+
+        limiarPantalla();
+        diseniarCirculo(x,20,10);
+        x++;
+
+    }
+
+    var pantalla = document.querySelector("canvas")
+    var pincel = pantalla.getContext("2d")
+    var x =0;
+
+    pincel.fillStyle = "lightgrey"
+    pincel.fillRect(0,0,600,400);
+
+    setInterval(actualizarPantalla,10);
+    // hace algo cada intervalo medido en milisegundos
+
+    
+</script>
