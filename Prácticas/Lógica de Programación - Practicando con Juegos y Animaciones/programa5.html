@@ -1,0 +1,72 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    function diseniarCirculo(x,y,radio, color){
+
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill();
+    }
+
+    function limiarPantalla(){
+
+        pincel.clearRect(0,0,600,400);
+   
+    }
+
+    function actualizarPantalla(){
+
+        limiarPantalla();
+        xAleatorio = posicionAleatoria(600);
+        yAleatorio = posicionAleatoria(400);
+        // establezco los máximos
+        crearObjetivo(xAleatorio, yAleatorio);
+
+    }
+
+    function crearObjetivo(x,y){
+
+        diseniarCirculo(x,y,radio+20, "red");
+        diseniarCirculo(x,y,radio+10, "white");
+        diseniarCirculo(x,y,radio, "red");
+    }
+
+    function posicionAleatoria(maximo){
+        
+        return Math.floor(Math.random()*maximo);
+        // genero las posiciones aleatorias
+    }
+    
+    function disparo(evento){
+
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        if( (x < xAleatorio + radio) && 
+            (x > xAleatorio - radio) && 
+            (y < yAleatorio + radio) && 
+            (y > yAleatorio - radio)){
+            // estoy estableciendo los rangos del circulo más chico
+                
+            alert("EN EL BLANCO")
+        }
+    }
+
+    var pantalla = document.querySelector("canvas")
+    var pincel = pantalla.getContext("2d")
+    var x =0;
+    var sentido = 1;
+    var radio = 10;
+    var xAleatorio;
+    var yAleatorio;
+
+    pincel.fillStyle = "lightgrey"
+    pincel.fillRect(0,0,600,400);
+
+    setInterval(actualizarPantalla,1000);
+    pantalla.onclick = disparo;
+  
+    
+</script>
