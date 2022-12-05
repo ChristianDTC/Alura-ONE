@@ -1,0 +1,44 @@
+<canvas width="600" height="400"> </canvas>
+
+<script>
+    
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d"); 
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400);    
+    var colores = ["blue", "red", "green"];
+    var indice = 0;
+
+
+    function dibujarCirculo(evento){
+        // dibujar un circulo en la posición donde hizo click izquierdo
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;    
+        pincel.fillStyle = colores[indice];
+        pincel.beginPath();
+        pincel.arc(x,y,10,0,2*3.14);
+        pincel.fill();
+        console.log(x + "," + y);        
+    }
+
+    pantalla.onclick = dibujarCirculo;
+    // llama la función al hacer click izquierdo
+
+    function alterarColor() {
+        //cambia el color del circulo
+
+        indice++;
+        if(indice >= colores.length){
+            // se controla si llego al final del array para volver al inicio
+            indice = 0;
+        }
+        return false;
+    }
+
+    pantalla.oncontextmenu = alterarColor;
+    // al hacer click con el boton derecho del mouse ejecutamos la función
+    
+
+</script>}
+
+
