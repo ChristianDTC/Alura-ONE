@@ -12,13 +12,17 @@
 
     </head>
 
+
     <body>
         
         <header>
 
             <div class="caja">
+                <!--con el div agrupamos los datos-->
             
-                <h1><img src="/imagenes/imagenes productos/logo.png"></h1>
+                <h1><img src="/imagenes/imagenes productos/logo.png" alt="Logo Barbería Alura"></h1>
+                <!--alt es un texto descriptivo por si la imagen no se puede cargar-->
+
 
                 <nav>
 
@@ -36,6 +40,7 @@
 
         </header>
 
+
         <main>
 
             <form>
@@ -43,45 +48,65 @@
                 <label for="nombreyapellido">Nombre y Apellido</label>
                 <!--el for hace que cuando haga click sobre el texto de 
                     Nombre y Apellido manda el cursos a la caja de texto-->
-                <input type="text" id="nombreyapellido">
+                <input type="text" id="nombreyapellido" class="input-padron" required>
 
                 <label for="correoelectronico">Correo Electrónico</label>
-                <input type="text" id="correoelectronico">
+                <input type="email" id="correoelectronico" class="input-padron" required placeholder="email@dominio.com">
+                <!--el type=email afecta cuando entramos del celular aparece el @
+                    y detecta si esta en el textbox 
+                    el placeholder muestra un texto atenuado dentro del texbox-->
 
                 <label for="telefono">Teléfono</label>
-                <input type="text" id="telefono">
+                <input type="tel" id="telefono" class="input-padron" required placeholder="(01) 2345 6789">
+                <!--el tel muestra sólo los números-->
 
                 <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" cols="70" rows="10"></textarea>
+                <textarea id="mensaje" cols="70" rows="10" class="input-padron"></textarea>
 
-                <div>
-                    <!--con el div agrupamos los datos-->
 
-                    <p>¿Cómo te gustaría que te contactemos?</p>
+                <fieldset>
+                    <!--hace referencia a que toda la información es sobre el mismo tema-->
 
-                    <label for="radio-email">Email</label>
-                    <input type="radio" name="contacto" value="Email" id="radio-email">
+                    <legend>¿Cómo te gustaría que te contactemos?</legend>
+                    <!--es una etiqueta de contenido-->
 
-                    <label for="radio-telefono">Teléfono</label>
-                    <input type="radio" name="contacto" value="Telefono" id="radio-telefono">
+                    <label for="radio-email"><input type="radio" name="contacto" value="Email" id="radio-email">Email</label>
                     
-                    <label for="radio-whatsapp">Whatsapp</label>
-                    <input type="radio" name="contacto" value="Whatsapp" id="radio-whatsapp">
+                    <label for="radio-telefono"><input type="radio" name="contacto" value="Telefono" id="radio-telefono">Teléfono</label>
+                    
+                    <label for="radio-whatsapp"><input type="radio" name="contacto" value="Whatsapp" id="radio-whatsapp" checked>Whatsapp</label>
+                    <!--con el checked lo marcamos por defecto-->
 
-                </div>
+                </fieldset>
 
-                <label><input type="checkbox">¿Le gustaría recibir novedades de la Barbería Alura?</label>
+
+                <fieldset>
+
+                    <legend>¿Qué horario prefiere?</legend>
+
+                    <select>
+
+                        <option>Mañana</option>
+                        <option>Tarde</option>
+                        <option>Noche</option>
+    
+                    </select>
+
+                </fieldset>
+
                 
+                <label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de la Barbería Alura?</label>
                 
-                <input type="submit" name="contacto" value="Enviar Formulario">
+                <input type="submit" name="contacto" value="Enviar Formulario" class="enviar">
 
             </form>
 
         </main>
 
+
         <footer>
 
-            <img src="/imagenes/imagenes productos/logo-blanco.png">
+            <img src="/imagenes/imagenes productos/logo-blanco.png" alt="Logo Barbería Alura">
             <p class="copyright">&copy Copyright Barberia Alura - ChristianDTC 2022</p>
 
         </footer>

@@ -95,14 +95,46 @@ main{
 form{
     margin: 40px 0;
 }
-form label{
+form label, form p{
     display: block;
     font-size: 20px;
     margin: 0 0 10px;
+
 }
-form input{
+
+fieldset legend{
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-top: 25px;
+}
+
+.input-padron{
     display: block;
-    margin: 0 0 20px;
+    margin: 0 0px 30px;
     padding: 10px 25px;
     width: 50%;
+}
+
+.checkbox {
+    margin: 40px 0;
+}
+
+.enviar{
+    width: 50%;
+    padding: 15px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: darkorange;
+    border: none;
+    border-radius: 15px;
+    transition: 1s all;
+    /*establezco el tiempo para hacer la transición*/
+    cursor: pointer;
+    /*cambio la flecha de mouse por la mano*/
+}
+.enviar:hover {
+    background: orange;
+    font-size: 23px;
+    transform: scale(1.2);
 }
