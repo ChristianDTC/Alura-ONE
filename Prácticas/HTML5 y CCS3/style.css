@@ -95,7 +95,7 @@ main{
 form{
     margin: 40px 0;
 }
-form label, form p{
+form label, form p, label{
     display: block;
     font-size: 20px;
     margin: 0 0 10px;
@@ -132,9 +132,33 @@ fieldset legend{
     /*establezco el tiempo para hacer la transición*/
     cursor: pointer;
     /*cambio la flecha de mouse por la mano*/
+    margin-bottom: 20px;
 }
 .enviar:hover {
     background: orange;
     font-size: 23px;
     transform: scale(1.2);
+}
+
+table{
+    margin: 40px;
+    width: 30%;
+    font-size: 18px;
+}
+
+thead{
+    background-color: grey;
+    color: white;
+    font-weight: bolder;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 8px 15px;
+}
+
+div label{
+    display: block;
+    font-size: 20px;
+    
 }
