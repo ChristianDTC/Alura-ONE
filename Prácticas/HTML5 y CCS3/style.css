@@ -10,7 +10,7 @@ header{
 .caja {
     width: 940px;
     position: relative;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 
 nav {
@@ -92,7 +92,7 @@ footer{
 }
 
 form{
-    margin: 40px 0;
+    margin: 40px 0 0 100px;
 }
 form label, form p, label{
     display: block;
@@ -115,7 +115,7 @@ fieldset legend{
 }
 
 .checkbox {
-    margin: 40px 0;
+    margin: 40px 0 30px 100px;
 }
 
 .enviar{
@@ -132,6 +132,7 @@ fieldset legend{
     cursor: pointer;
     /*cambio la flecha de mouse por la mano*/
     margin-bottom: 20px;
+    margin-left: 90px;
 }
 .enviar:hover {
     background: orange;
@@ -140,8 +141,8 @@ fieldset legend{
 }
 
 table{
-    margin: 40px;
-    width: 30%;
+    margin: 20px 0 0 100px;
+    width: 20%;
     font-size: 18px;
 }
 
@@ -258,3 +259,17 @@ div label{
     margin: 3em auto;
 }
 
+@media screen and(max-width:480px) {
+    h1{
+        text-align: center;
+    }
+    nav{
+        position: static;
+    }
+    .caja, .principal, .mapa-contenido, .contenido-diferenciales, .video{
+        width: auto;
+    }    
+    .lista-diferenciales, .imagen-diferencial{
+        width: 100%;
+    }
+}
