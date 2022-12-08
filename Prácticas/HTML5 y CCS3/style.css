@@ -20,18 +20,19 @@ nav {
 }
 nav li{
     display: inline;
-    margin: 0 0 0 15px;
+    margin: 0 0 0 35px;
 }
 nav a{
     text-transform: uppercase;
     color: #000000;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 30px;
     text-decoration: none;
+    transition: 600ms;
 }
 nav a:hover{
     color: #c78c19;
-    text-decoration: underline;
+    font-size: 40px;
 }
 
 .productos{
@@ -91,6 +92,12 @@ footer{
     margin: 20px;
 }
 
+.github{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
 form{
     margin: 40px 0 0 100px;
 }
@@ -98,24 +105,29 @@ form label, form p, label{
     display: block;
     font-size: 20px;
     margin: 0 0 10px;
-
+}
+.label-contacto{
+    font-weight: bold;
 }
 
 fieldset legend{
     font-size: 20px;
+    font-weight: bold;
     margin-bottom: 20px;
     padding-top: 25px;
 }
 
 .input-padron{
     display: block;
-    margin: 0 0px 30px;
+    margin: 0 0px 40px;
     padding: 10px 25px;
     width: 50%;
+    font-size: 17px;
 }
 
-.checkbox {
-    margin: 40px 0 30px 100px;
+.checkbox{
+    margin: 40px 0 20px 0;
+    font-weight: bold;
 }
 
 .enviar{
@@ -132,7 +144,8 @@ fieldset legend{
     cursor: pointer;
     /*cambio la flecha de mouse por la mano*/
     margin-bottom: 20px;
-    margin-left: 90px;
+    margin-top: 15px;
+
 }
 .enviar:hover {
     background: orange;
@@ -141,20 +154,24 @@ fieldset legend{
 }
 
 table{
-    margin: 20px 0 0 100px;
+    margin: 15px 0 0 0;
     width: 20%;
     font-size: 18px;
+    font-weight: bold;
 }
 
 thead{
     background-color: grey;
     color: white;
-    font-weight: bolder;
 }
 
 th, td{
     border: 1px solid black;
     padding: 8px 15px;
+}
+
+.desplegable{
+    font-size: 17px;
 }
 
 div label{
@@ -181,12 +198,15 @@ div label{
 .titulo-principal {
     text-align: center;
     font-size: 2em;
+    font-weight: bold;
     margin: 0 0 1em;
     clear: left;
 }
 
 .principal p{
     margin: 0 0 1em;
+    font-size: 1.2em;
+    text-align: justify;
 }
 .principal strong{
     font-weight: bold;
@@ -209,6 +229,7 @@ div label{
 .mapa p{
     margin: 0 0 2em;
     text-align: center;
+    font-size: 1.2em;
 }
 
 .mapa-contenido{
@@ -234,6 +255,7 @@ div label{
 
 .items{
     line-height: 1.5;
+    font-size: 1.2em;
 }
 
 .items:before{

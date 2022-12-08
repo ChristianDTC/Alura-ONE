@@ -46,22 +46,22 @@
 
             <form>
 
-                <label for="nombreyapellido">Nombre y Apellido</label>
+                <label for="nombreyapellido" class="label-contacto">Nombre y Apellido</label>
                 <!--el for hace que cuando haga click sobre el texto de 
                     Nombre y Apellido manda el cursos a la caja de texto-->
                 <input type="text" id="nombreyapellido" class="input-padron" required>
 
-                <label for="correoelectronico">Correo Electrónico</label>
+                <label for="correoelectronico" class="label-contacto">Correo Electrónico</label>
                 <input type="email" id="correoelectronico" class="input-padron" required placeholder="email@dominio.com">
                 <!--el type=email afecta cuando entramos del celular aparece el @
                     y detecta si esta en el textbox 
                     el placeholder muestra un texto atenuado dentro del texbox-->
 
-                <label for="telefono">Teléfono</label>
+                <label for="telefono" class="label-contacto">Teléfono</label>
                 <input type="tel" id="telefono" class="input-padron" required placeholder="(01) 2345 6789">
                 <!--el tel muestra sólo los números-->
 
-                <label for="mensaje">Mensaje</label>
+                <label for="mensaje" class="label-contacto">Mensaje</label>
                 <textarea id="mensaje" cols="70" rows="10" class="input-padron"></textarea>
 
 
@@ -85,7 +85,7 @@
 
                     <legend>¿Qué horario prefiere?</legend>
 
-                    <select>
+                    <select class="desplegable">
 
                         <option>Mañana</option>
                         <option>Tarde</option>
@@ -95,65 +95,70 @@
 
                 </fieldset>
 
+                <table>
+                    <!--etiqueta para tablas-->
+    
+                    <thead>
+                        <!--etiqueta cabecera de tabla-->
+    
+                        <tr>
+                            <!--etiqueta filas de la tabla-->
+        
+                            <th>Día</th>
+                            <!--etiqueta celdas de la tabla-->
+                            <th>Hora</th>
+        
+                        </tr>
+    
+                    </thead>
+    
+                    <tbody>
+                        <!--etiqueta cuerpo de la tabla-->
+    
+                        <tr>
+    
+                            <td>Lunes</td>
+                            <td>8hs a 20hs</td>
+        
+                        </tr>
+        
+                        <tr>
+        
+                            <td>Miércoles</td>
+                            <td>8hs a 20hs</td>
+        
+                        </tr>
+        
+                        <tr>
+        
+                            <td>Viernes</td>
+                            <td>8hs a 20hs</td>
+        
+                        </tr>
+    
+                    </tbody>
+                    
+                </table>
+    
+                <div>
+
+                    <label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de la Barbería Alura?</label>
+                    <input type="submit" name="contacto" value="Enviar Formulario" class="enviar">
+                    
+                </div>
+                
+    
+
             </form>
 
-            <table>
-                <!--etiqueta para tablas-->
-
-                <thead>
-                    <!--etiqueta cabecera de tabla-->
-
-                    <tr>
-                        <!--etiqueta filas de la tabla-->
-    
-                        <th>Día</th>
-                        <!--etiqueta celdas de la tabla-->
-                        <th>Hora</th>
-    
-                    </tr>
-
-                </thead>
-
-                <tbody>
-                    <!--etiqueta cuerpo de la tabla-->
-
-                    <tr>
-
-                        <td>Lunes</td>
-                        <td>8hs a 20hs</td>
-    
-                    </tr>
-    
-                    <tr>
-    
-                        <td>Miércoles</td>
-                        <td>8hs a 20hs</td>
-    
-                    </tr>
-    
-                    <tr>
-    
-                        <td>Viernes</td>
-                        <td>8hs a 20hs</td>
-    
-                    </tr>
-
-                </tbody>
-                
-            </table>
-
-
-            <label class="checkbox"><input type="checkbox" checked>¿Le gustaría recibir novedades de la Barbería Alura?</label>
-                
-            <input type="submit" name="contacto" value="Enviar Formulario" class="enviar">
-
+            
         </main>
 
 
         <footer>
 
-            <img src="/imagenes/imagenes productos/logo-blanco.png" alt="Logo Barbería Alura">
-            <p class="copyright">&copy Copyright Barberia Alura - ChristianDTC 2022</p>
+            <img src="/imagenes/imagenes productos/logo-blanco.png">
+            <p class="copyright">&copy Copyright Barberia Alura 2022 - <a href="https://github.com/ChristianDTC" class="github">ChristianDTC</a></p>
 
         </footer>
 
