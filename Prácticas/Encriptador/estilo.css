@@ -63,7 +63,7 @@ main{
     width: 80%;
     margin: 0 0 0 auto;
 }
-.boton-encriptar, .boton-desencriptar, .boton-copiar{
+.boton-encriptar, .boton-desencriptar, .boton-copiar, .boton-pegar{
     background-color: #0A3871;
     border-radius: 24px;
     color: white;
