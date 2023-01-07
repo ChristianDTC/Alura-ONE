@@ -19,7 +19,23 @@ header{
 
 .logo{
     width: 100%;
-    margin-top: 1.5%;
+    margin-top: 1%;
+}
+
+.contenedor-dark{
+    display: inline-flex;
+    float: right;
+    margin-right: 1%;
+}
+.btn-dark, .btn-light, .btn-leer{
+    background-color: #F3F5FC;
+    color: #0A3871;
+    font-size: 18px;
+    border: none;
+}
+.btn-light{
+    background-color: black;
+    color: white;
 }
 
 main{
@@ -34,11 +50,11 @@ main{
     margin: 5% 0 0 auto;
 }
 .textarea{
-    width: 80%;
+    width: 75%;
     height: 73%;
     display: block;
-    margin: 3% 0 2% auto;
-    padding-right: 10%;
+    margin: 3% 8% 2% auto;
+    padding: 5px 0 0 15px;
     border: none;
     outline: none;
     resize: none;
@@ -55,15 +71,18 @@ main{
     font-size: 14px;
     color: #495057;
     opacity: 80%; 
-    width: 80%;
-    margin: 0 0 1% auto;
+    width: 83%;
+    margin: 0 0 2% auto;
+}
+.advertencia:hover{
+    font-size: 24px;
 }
 
 .contenedor-btn{
-    width: 80%;
+    width: 83%;
     margin: 0 0 0 auto;
 }
-.boton-encriptar, .boton-desencriptar, .boton-copiar, .boton-pegar{
+.boton-encriptar, .boton-desencriptar, .boton-copiar{
     background-color: #0A3871;
     border-radius: 24px;
     color: white;
@@ -74,10 +93,10 @@ main{
     transition: 600ms all;
     margin-right: 5%;
     cursor: pointer;
-    box-shadow: 1px 1px 10px 1px grey;
+    box-shadow: 1px 1px 5px 1px grey;
 }
 .boton-desencriptar, .boton-copiar{
-    background-color: #D8DFE8;
+    background-color: #F3F5FC;
     color: #0A3871;
 }
 .boton-desencriptar:hover, .boton-encriptar:hover, .boton-copiar:hover{
@@ -94,7 +113,7 @@ main{
     margin: 0 4% 0 0;
     box-sizing: border-box;
     overflow: hidden;
-    box-shadow: 1px 1px 8px 1px grey;
+    box-shadow: 1px 1px 5px 1px grey;
 }
 .contenedor-munieco{
     width: 90%;
@@ -127,7 +146,9 @@ main{
     margin: auto;
     padding-top: 5%;
     box-sizing: border-box;
+    overflow: auto;
     text-align: justify;
+    font-size: 23px;
 }
 
 .contenedor-copiar{
@@ -136,8 +157,7 @@ main{
 }
 .boton-copiar{
     width: 80%;
-    margin: 0;
-    background-color: white;
+    margin: auto;
 }
 .boton-copiar:hover{
     width: 90%;
@@ -150,16 +170,35 @@ main{
 footer{
     text-align: center;
     font-size: 12px;
-    margin-right: 2%;
-    margin-top: 2%;
 }
-.github{
+
+.copyride{
+    width: 15%;
     text-decoration: none;
-    margin-top: 2%;
+    margin: 2% auto 1%;
     font-size: 12px;
     color: black;
 }
+.fa-brands {
+    font-size: 14px;
+    margin: 2%;
+    color: black;
+}
 
-.icono{
-    width: 14px;
+.dark{
+    background-color: black;
+    color: white;
+}
+.dark-grey{
+    background-color: #3f3f3f;
+    color: white;
+    box-shadow: 1px 1px 5px 1px white;
+}
+.dark-grey::placeholder{
+    color: white;
+}
+.dark-grey2{
+    background-color: grey;
+    color: white;
+    box-shadow: 1px 1px 5px 1px white;
 }

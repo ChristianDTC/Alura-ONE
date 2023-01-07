@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="contenedor-html">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Encriptador Alura-ONE</title>
         <link rel="stylesheet" href="estilo.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@300&family=Princess+Sofia&family=Sofia&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         
     </head>
 
-    <body>
+    <body class="contenedor-body">
 
         <header class="logo">
-            <a href="https://www.aluracursos.com/"><img src="Logo.png" alt="Imágen del Logo"></a>
+
+            <a href="https://www.aluracursos.com/" target="_blank"><img src="Logo.svg" alt="Logo Alura" class="img-logo"><img src="LogoW.svg" alt="Logo Alura Blanco" class="img-logo-w ocultar"></a>
+
+            <section class="contenedor-dark">
+                <button class="btn-dark"> <i class="fa-solid fa-moon"></i></button>
+                <button class="btn-light ocultar"><i class="fa-regular fa-sun"></i></button>
+            </section>
+            
         </header>
 
 
@@ -22,14 +29,15 @@
             <section class="section-textarea">
 
                 <textarea class="textarea" placeholder="Ingrese el texto aquí" ></textarea>
-
+                
                 <p class="advertencia"><img src="iconoError.png">
                     Sólo letras minúsculas y sin acentos
                 </p>
-
+                
                 <article class="contenedor-btn">
-                    <button class="boton-encriptar">Encriptar</button>
-                    <button class="boton-desencriptar">Desencriptar</button>
+                    <button class="boton-encriptar"><i class="fa-solid fa-lock"></i> Encriptar <i class="fa-solid fa-lock"></i></button>
+                    <button class="boton-desencriptar" ><i class="fa-solid fa-key"></i> Desencriptar <i class="fa-solid fa-key"></i></button>
+                    <button class="btn-leer"><i class="fa-solid fa-volume-high"></i></i></button>
                 </article>
 
             </section>
@@ -54,7 +62,7 @@
                 </article>
 
                 <article class="contenedor-copiar">
-                    <button class="boton-copiar">Copiar</button>
+                    <button class="boton-copiar"><i class="fa-regular fa-copy"></i> Copiar <i class="fa-regular fa-copy"></i></button>
                 </article>
                
             </section>
@@ -64,7 +72,7 @@
     </body>
 
     <footer>
-        <p class="copyright"><a href="https://www.linkedin.com/in/christiandtc" class="github"> <img src="linkedin.png" class="icono"></a> <a href="https://github.com/ChristianDTC" class="github"><img src="github.png" class="icono"></a> &copy ChristianDTC</p>
+        <p class="copyride"><a href="https://www.linkedin.com/in/christiandtc" target="_blank"><i class="fa-brands fa-linkedin"></i></a><a href="https://github.com/ChristianDTC" target="_blank"><i class="fa-brands fa-github"></i></a> &copyChristianDTC</p>
     </footer>
 
     <script src="encriptador.js"></script>

@@ -1,21 +1,45 @@
+/*BOTONES */
 const botonEncriptar = document.querySelector(".boton-encriptar");
 const botonDesencriptar = document.querySelector(".boton-desencriptar");
 const botonCopiar = document.querySelector(".boton-copiar");
+const btnDark = document.querySelector(".btn-dark")
+const btnLight = document.querySelector(".btn-light")
+
+/*CONTENEDORES*/
+const txEncriptado = document.querySelector(".contenedor-tx-encriptado");
+const contenedorCopiar = document.querySelector(".contenedor-copiar");
+const html = document.querySelector(".contenedor-html");
+const body = document.querySelector(".contenedor-body");
+const sectionMunieco = document.querySelector(".section-munieco");
 const munieco = document.querySelector(".contenedor-munieco");
 const h3 = document.querySelector(".contenedor-h3");
 const parrafo = document.querySelector(".contenedor-p");
-const txEncriptado = document.querySelector(".contenedor-tx-encriptado")
-const contenedorCopiar = document.querySelector(".contenedor-copiar")
+const copyride = document.querySelector(".copyride");
+
+/*ELEMENTOS*/
 let textoEncriptado = document.querySelector(".texto-encriptado");
 let textarea = document.querySelector(".textarea");
+const link = document.querySelector(".fa-linkedin");
+const git = document.querySelector(".fa-github");
+const logo = document.querySelector(".img-logo");
+const logoW = document.querySelector(".img-logo-w");
+const btnLeer = document.querySelector(".btn-leer");
 
+/*ACTIVACION FUNCIONES CON CLICK*/
 botonEncriptar.onclick = encriptar;
 botonDesencriptar.onclick = desencriptar;
 botonCopiar.onclick = copiarTexto;
+btnDark.onclick = dark;
+btnLight.onclick = light;
+btnLeer.onclick = leerTxt;
 
 
 textarea.focus();
 /*EL CURSOR QUEDA DENTRO DEL TEXTAREA*/
+
+
+
+/* FUNCIONES */
 
 function encriptar(){
     /*ENCRIPTA EL TEXTO CORRECTO*/
@@ -44,6 +68,7 @@ function encriptar(){
     }
 }
 
+
 function desencriptar(){
     /*DESENCRIPTA EL TEXTO CORRECTO*/
 
@@ -66,6 +91,7 @@ function desencriptar(){
     }
 }
 
+
 function copiarTexto(){
     /*COPIO EL TEXTO DE TEXTO-ENCRIPTADO EN EL TEXTAREA*/
 
@@ -74,10 +100,18 @@ function copiarTexto(){
     navigator.clipboard.writeText(textoEncriptado.textContent);
     /*COPIO EN EL PORTA PAPELES LO QUE ESTA EN TEXTO-ENCRIPTADO*/
     leer(textoEncriptado.textContent);
+    textoEncriptado.textContent = "";
     mostrarMunieco();
     textarea.focus();
 }
 
+
+function leerTxt(){
+    /*SI HAY TEXTO EN TEXTAREA O TEXTO-ENCRIPTADO LO LEE*/
+    
+    leer(textarea.value);
+    leer(textoEncriptado.textContent);
+}
 function leer(texto){
     /*HAGO QUE LEEA EL TEXTO INDICADO*/
 
@@ -88,6 +122,48 @@ function leer(texto){
 }
 
 
+function dark(){
+    /*MODIFICO LOS BACKGROUND PARA DARLE UN MODO OSCURO*/
+
+    html.classList.add("dark");
+    body.classList.add("dark");
+    btnLeer.classList.add("dark")
+    copyride.classList.add("dark");
+    link.classList.add("dark");
+    git.classList.add("dark");
+    textarea.classList.add("dark-grey");
+    sectionMunieco.classList.add("dark-grey")
+    botonEncriptar.classList.add("dark-grey");
+    botonDesencriptar.classList.add("dark-grey2");
+    botonCopiar.classList.add("dark-grey2");
+    logo.classList.add("ocultar");
+    logoW.classList.remove("ocultar");
+    btnDark.classList.add("ocultar");
+    btnLight.classList.remove("ocultar");
+    textarea.focus();
+}
+function light(){
+    /*DEVUELVO LOS VALORES ORIGINALES, SACO MODO OSCURO*/
+
+    html.classList.remove("dark");
+    body.classList.remove("dark");
+    btnLeer.classList.remove("dark")
+    copyride.classList.remove("dark");
+    link.classList.remove("dark");
+    git.classList.remove("dark");
+    textarea.classList.remove("dark-grey");
+    sectionMunieco.classList.remove("dark-grey")
+    botonEncriptar.classList.remove("dark-grey");
+    botonDesencriptar.classList.remove("dark-grey2");
+    botonCopiar.classList.remove("dark-grey2");
+    logoW.classList.add("ocultar");
+    logo.classList.remove("ocultar");
+    btnLight.classList.add("ocultar");
+    btnDark.classList.remove("ocultar");
+    textarea.focus();
+}
+
+
 function recuperarTexto(){
     /*RECUPERO EL TEXTO SI CUMPLE CON LO SOLICITADO*/
 
@@ -95,18 +171,23 @@ function recuperarTexto(){
     /*VALORES ACEPTADOS*/
 
     let cumpleRegla = true;
+    /*VARIABLE DE CONTROL*/
 
     for (let i=0; i < textarea.value.length; i++){
+        /*RECORRO EL TEXTO LETRA POR LETRA COMPARANDO CON LOS VALORES ACEPTADOS */
 
         if ((!regEx.test(textarea.value[i]))){
+            /*SI DETENCTA UN CARACTER QUE NO ESTA DENTRO DE LOS ACEPTADOS, TERMINA EL FOR Y CAMBIA LA VARIABLE DE CONTROL*/
             cumpleRegla = false;
             break;
         }
     }
     
     if (cumpleRegla){
+        /*SI EL TEXTO CUMPLE LOS OBJETIVOS LO RETORNA*/
         return textarea.value;
     } else {
+        /*SINO RETORNA FALSE*/
         return cumpleRegla;
     }
 }
@@ -120,26 +201,29 @@ function ocultarMunieco(){
     parrafo.classList.add("ocultar");
     mostrarCopiar();
 }
-
 function mostrarMunieco(){
-    /*muestra el munieco y el texto eliminando la clase ocultar*/
+    /*MUESTRO EL MUÑECO Y EL TEXTO REMOVIENDO LA CLASE OCULTAR QUE CREE EN EL CSS*/
+
     munieco.classList.remove("ocultar");
     h3.classList.remove("ocultar");
     parrafo.classList.remove("ocultar");
     ocultarCopiar();
 }
 
+
 function mostrarCopiar(){
-    /*muestra el texto y boton copiar eliminando la clase ocultar*/
+    /*MUESTRA EL TEXTO Y EL BOTON COPIAR*/
+
     txEncriptado.classList.remove("ocultar");
     contenedorCopiar.classList.remove("ocultar");
 }
-
 function ocultarCopiar(){
-    /*oculta el texto y boton copiar agregando la clase ocultar que cree en el css*/
+    /*OCULTO EL TEXTO Y EL BOTON COPIAR*/
+
     txEncriptado.classList.add("ocultar");
     contenedorCopiar.classList.add("ocultar");
 }
+
 
 function encriptarTexto(mensaje){
     /*código de encriptación*/
