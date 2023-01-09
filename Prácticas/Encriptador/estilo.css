@@ -63,9 +63,10 @@ main{
     background-color: #F3F5FC;
     color: #0A3871;
 }
-::placeholder { 
-    color: #0A3871; 
+::placeholder{ 
+    color: #0A3871;
 }
+
 
 .advertencia{
     font-size: 14px;
@@ -202,3 +203,4 @@ footer{
     color: white;
     box-shadow: 1px 1px 5px 1px white;
 }
+

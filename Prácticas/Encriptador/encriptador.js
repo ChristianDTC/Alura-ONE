@@ -2,12 +2,13 @@
 const botonEncriptar = document.querySelector(".boton-encriptar");
 const botonDesencriptar = document.querySelector(".boton-desencriptar");
 const botonCopiar = document.querySelector(".boton-copiar");
-const btnDark = document.querySelector(".btn-dark")
-const btnLight = document.querySelector(".btn-light")
+const btnDark = document.querySelector(".btn-dark");
+const btnLight = document.querySelector(".btn-light");
+const btnArg = document.querySelector(".btn-arg");
+const btnUsa = document.querySelector(".btn-usa");
+
 
 /*CONTENEDORES*/
-const txEncriptado = document.querySelector(".contenedor-tx-encriptado");
-const contenedorCopiar = document.querySelector(".contenedor-copiar");
 const html = document.querySelector(".contenedor-html");
 const body = document.querySelector(".contenedor-body");
 const sectionMunieco = document.querySelector(".section-munieco");
@@ -15,15 +16,20 @@ const munieco = document.querySelector(".contenedor-munieco");
 const h3 = document.querySelector(".contenedor-h3");
 const parrafo = document.querySelector(".contenedor-p");
 const copyride = document.querySelector(".copyride");
+const txEncriptado = document.querySelector(".contenedor-tx-encriptado");
+const contenedorCopiar = document.querySelector(".contenedor-copiar");
+
 
 /*ELEMENTOS*/
 let textoEncriptado = document.querySelector(".texto-encriptado");
 let textarea = document.querySelector(".textarea");
+const advertencia = document.querySelector(".advertencia");
 const link = document.querySelector(".fa-linkedin");
 const git = document.querySelector(".fa-github");
 const logo = document.querySelector(".img-logo");
 const logoW = document.querySelector(".img-logo-w");
 const btnLeer = document.querySelector(".btn-leer");
+
 
 /*ACTIVACION FUNCIONES CON CLICK*/
 botonEncriptar.onclick = encriptar;
@@ -32,18 +38,18 @@ botonCopiar.onclick = copiarTexto;
 btnDark.onclick = dark;
 btnLight.onclick = light;
 btnLeer.onclick = leerTxt;
+btnArg.onclick = txtEspañol;
+btnUsa.onclick = txtIngles;
 
 
 textarea.focus();
 /*EL CURSOR QUEDA DENTRO DEL TEXTAREA*/
 
 
-
 /* FUNCIONES */
 
 function encriptar(){
     /*ENCRIPTA EL TEXTO CORRECTO*/
-
 
     if (recuperarTexto() != false){
         /*CONTROLO SI ME DEVUELVE EL TEXTO*/
@@ -163,6 +169,27 @@ function light(){
     textarea.focus();
 }
 
+function txtIngles() {
+    /*CAMBIO LOS TEXTO AL INGLES*/
+    
+    textarea.setAttribute("placeholder", "Enter the text here");
+    advertencia.textContent = "Only lowercase letters and no accents";
+    document.querySelector("h3").textContent = "No message was found";
+    document.querySelector(".txt-p").textContent = "Enter the text you wish to encrypt or decrypt";
+    botonEncriptar.textContent = "Encript";
+    botonDesencriptar.textContent = "Decript";
+    botonCopiar.textContent = "Copy";
+    textarea.focus();
+    btnUsa.classList.add("ocultar")
+    btnArg.classList.remove("ocultar");
+}
+  
+function txtEspañol(){
+    /*REINICIO LA PAGINA PARA VOLVER LOS TEXTOS AL ESPAÑOL*/
+
+    location.reload();
+}
+
 
 function recuperarTexto(){
     /*RECUPERO EL TEXTO SI CUMPLE CON LO SOLICITADO*/
@@ -227,102 +254,30 @@ function ocultarCopiar(){
 
 function encriptarTexto(mensaje){
     /*código de encriptación*/
-    var texto = mensaje;
-    var textoFinal = "";
 
-    for (var i = 0; i < texto.length; i++){
-        /*recorre el texto ingresado buscando las vocales a cambiar y las concatena para obtener el encriptado*/
-        if (texto[i] === "a"){
-            textoFinal += "ai";
-        }
-        else if (texto[i] === "e"){
-            textoFinal += "enter";
-        }
-        else if (texto[i] === "i"){
-            textoFinal += "imes";
-        }
-        else if (texto[i] === "o"){
-            textoFinal += "ober";
-        }
-        else if (texto[i] === "u"){
-            textoFinal += "ufat";
-        }
-        else{
-            textoFinal += texto[i];
-        }
-    }
+    let texto = mensaje;
+    let txtEncriptado = "";
 
-    return textoFinal;
+    txtEncriptado = texto.replace(/e/gm, "enter");
+    txtEncriptado = txtEncriptado.replace(/o/gm, "ober");
+    txtEncriptado = txtEncriptado.replace(/i/gm, "imes");
+    txtEncriptado = txtEncriptado.replace(/a/gm, "ai");
+    txtEncriptado = txtEncriptado.replace(/u/gm, "ufat");
+    
+    return txtEncriptado;
 }
 
 function desencriptarTexto(mensaje){
     /*código de encriptación al reves*/
-    var texto = mensaje;
-    var textoFinal = "";
 
-    for (var i = 0; i < texto.length; i++){
-        /*recorre el texto ingresado buscando las vocales a cambiar saltando las letras agregadas demás y las concatena para obtener el desencriptado*/
-        if (texto[i] === "a"){
-            textoFinal += "a";
-            i += 1;
-        }
-        else if (texto[i] === "e"){
-            textoFinal += "e";
-            i += 4;
-        }
-        else if (texto[i] === "i"){
-            textoFinal += "i";
-            i += 3;
-        }
-        else if (texto[i] === "o"){
-            textoFinal += "o";
-            i += 3;
-        }
-        else if (texto[i] === "u"){
-            textoFinal += "u";
-            i += 3;
-        }
-        else{
-            textoFinal += texto[i];
-        }
-    }
+    let texto = mensaje;
+    let txtDesencriptado = "";
 
-    return textoFinal;
-}
-
-
-/* Voy a buscar otra opción más eficiente
-function recuperarTexto(){
-    /*encripto el texto y lo retorno*/
-
-    /*variables de control 
-    var tieneMayusculas = false;
-    var tieneAcentos = false;
+    txtDesencriptado = texto.replace(/enter/gm, "e");
+    txtDesencriptado = txtDesencriptado.replace(/ober/gm, "o");
+    txtDesencriptado = txtDesencriptado.replace(/imes/gm, "i");
+    txtDesencriptado = txtDesencriptado.replace(/ai/gm, "a");
+    txtDesencriptado = txtDesencriptado.replace(/ufat/gm, "u");
     
-    /*recorro el texto para detectar si tiene mayuscular
-    for (var i=0; i < textarea.value.length; i++){
-        /*comparo cada letra con su mayuscula y discrimino los espacios en blanco 
-        if (textarea.value[i] === textarea.value[i].toUpperCase() & textarea.value[i] != " "){
-            alert("TEXTO SIN MAYUSCULAS");
-            tieneMayusculas = true;
-        }
-        
-        /*comparo si tiene acento, no incluyo mayusculas porque ya se descartan con el primer if 
-        if (textarea.value[i] === "á" ||
-            textarea.value[i] === "é" ||
-            textarea.value[i] === "í" ||
-            textarea.value[i] === "ó"||
-            textarea.value[i] === "ú"){
-            tieneAcentos = true;
-            alert("TEXTO SIN ACENTOS");
-            break;
-        }
-       
-    }
-    /*si tiene mayusculas o acentos retorno true sino el texto
-    if(tieneMayusculas || tieneAcentos){
-        return true;
-    } else {
-        return textarea.value;
-    }
-}*/
+    return txtDesencriptado;
+}
