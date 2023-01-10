@@ -27,7 +27,7 @@ header{
     float: right;
     margin-right: 1%;
 }
-.btn-dark, .btn-light, .btn-leer{
+.btn-dark, .btn-light, .btn-leer, .btn-silencio, .btn-usa, .btn-arg{
     background-color: #F3F5FC;
     color: #0A3871;
     font-size: 18px;

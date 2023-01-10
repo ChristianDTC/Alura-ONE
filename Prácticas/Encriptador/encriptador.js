@@ -29,6 +29,7 @@ const git = document.querySelector(".fa-github");
 const logo = document.querySelector(".img-logo");
 const logoW = document.querySelector(".img-logo-w");
 const btnLeer = document.querySelector(".btn-leer");
+const btnSilencio = document.querySelector(".btn-silencio");
 
 
 /*ACTIVACION FUNCIONES CON CLICK*/
@@ -38,8 +39,12 @@ botonCopiar.onclick = copiarTexto;
 btnDark.onclick = dark;
 btnLight.onclick = light;
 btnLeer.onclick = leerTxt;
+btnSilencio.onclick = silenciar;
 btnArg.onclick = txtEspañol;
 btnUsa.onclick = txtIngles;
+
+/*VARIABLES DE CONTROL*/
+var puedeLeer = true;
 
 
 textarea.focus();
@@ -57,7 +62,9 @@ function encriptar(){
         ocultarMunieco();
         textoEncriptado.textContent = encriptarTexto(recuperarTexto());
         /*AGREGO EL TEXTO ENCRIPTADO EN EL PARRAFO DE TEXTO-ENCRIPTADO*/
-        leer(textarea.value);
+        if(puedeLeer){
+            leer(textarea.value)
+        }
         /*LEE EL TEXTO*/
         textarea.value = "";
         /*LIMPIO EL TEXTAREA, QUEDA CON EL PLACEHOLDER*/
@@ -82,7 +89,9 @@ function desencriptar(){
 
         ocultarMunieco();
         textoEncriptado.textContent = desencriptarTexto(recuperarTexto());
-        leer(textarea.value);
+        if (puedeLeer){
+            leer(textarea.value);
+        }
         textarea.value = "";
         textarea.focus();
 
@@ -105,7 +114,9 @@ function copiarTexto(){
     /*PASO EL TEXTO ENCRIPTADO AL TEXTAREA*/
     navigator.clipboard.writeText(textoEncriptado.textContent);
     /*COPIO EN EL PORTA PAPELES LO QUE ESTA EN TEXTO-ENCRIPTADO*/
-    leer(textoEncriptado.textContent);
+    if (puedeLeer){
+        leer(textoEncriptado.textContent);
+    }
     textoEncriptado.textContent = "";
     mostrarMunieco();
     textarea.focus();
@@ -113,10 +124,18 @@ function copiarTexto(){
 
 
 function leerTxt(){
-    /*SI HAY TEXTO EN TEXTAREA O TEXTO-ENCRIPTADO LO LEE*/
+    /*SI PRESIONA EL BOTON LA VARIABLE DE CONTROL CAMBIA Y MUTEA EL LECTOR DE TEXTO*/
     
-    leer(textarea.value);
-    leer(textoEncriptado.textContent);
+    puedeLeer = false;
+    btnLeer.classList.add("ocultar");
+    btnSilencio.classList.remove("ocultar");
+}
+function silenciar(){
+     /*SI PRESIONA EL BOTON LA VARIABLE DE CONTROL CAMBIA Y DESMUTEA EL  LECTOR DE TEXTO*/
+
+    puedeLeer = true;
+    btnLeer.classList.remove("ocultar");
+    btnSilencio.classList.add("ocultar");
 }
 function leer(texto){
     /*HAGO QUE LEEA EL TEXTO INDICADO*/
@@ -133,12 +152,14 @@ function dark(){
 
     html.classList.add("dark");
     body.classList.add("dark");
-    btnLeer.classList.add("dark")
+    btnLeer.classList.add("dark");
+    btnUsa.classList.add("dark");
+    btnArg.classList.add("dark");
     copyride.classList.add("dark");
     link.classList.add("dark");
     git.classList.add("dark");
     textarea.classList.add("dark-grey");
-    sectionMunieco.classList.add("dark-grey")
+    sectionMunieco.classList.add("dark-grey");
     botonEncriptar.classList.add("dark-grey");
     botonDesencriptar.classList.add("dark-grey2");
     botonCopiar.classList.add("dark-grey2");
@@ -154,6 +175,8 @@ function light(){
     html.classList.remove("dark");
     body.classList.remove("dark");
     btnLeer.classList.remove("dark")
+    btnUsa.classList.remove("dark");
+    btnArg.classList.remove("dark");
     copyride.classList.remove("dark");
     link.classList.remove("dark");
     git.classList.remove("dark");
