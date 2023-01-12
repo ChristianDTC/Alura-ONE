@@ -152,7 +152,9 @@ function dark(){
 
     html.classList.add("dark");
     body.classList.add("dark");
+    advertencia.classList.add("dark")
     btnLeer.classList.add("dark");
+    btnSilencio.classList.add("dark");
     btnUsa.classList.add("dark");
     btnArg.classList.add("dark");
     copyride.classList.add("dark");
@@ -174,7 +176,9 @@ function light(){
 
     html.classList.remove("dark");
     body.classList.remove("dark");
-    btnLeer.classList.remove("dark")
+    advertencia.classList.remove("dark")
+    btnLeer.classList.remove("dark");
+    btnSilencio.classList.remove("dark");
     btnUsa.classList.remove("dark");
     btnArg.classList.remove("dark");
     copyride.classList.remove("dark");
@@ -210,7 +214,16 @@ function txtIngles() {
 function txtEspañol(){
     /*REINICIO LA PAGINA PARA VOLVER LOS TEXTOS AL ESPAÑOL*/
 
-    location.reload();
+    textarea.setAttribute("placeholder", "Ingrese el texto aquí");
+    advertencia.textContent = "Sólo letras minúsculas y sin acentos";
+    document.querySelector("h3").textContent = "Ningún mensaje fue encontrado";
+    document.querySelector(".txt-p").textContent = "Ingresa el texto que deseas encriptar o desencriptar";
+    botonEncriptar.textContent = "Encriptar";
+    botonDesencriptar.textContent = "Desencriptar";
+    botonCopiar.textContent = "Copiar";
+    textarea.focus();
+    btnUsa.classList.remove("ocultar")
+    btnArg.classList.add("ocultar");
 }
 
 
@@ -244,7 +257,7 @@ function recuperarTexto(){
 
 
 function ocultarMunieco(){
-    /*OCULTO EL MUÑECO Y EL TEXTO AGREGANDO LA CLASE OCULTAR QUE CREE EN EL CSS*/
+    /*OCULTO LA SECCION MUÑECO AGREGANDO LA CLASE OCULTAR QUE CREE EN EL CSS*/
 
     munieco.classList.add("ocultar");
     h3.classList.add("ocultar");
@@ -252,7 +265,7 @@ function ocultarMunieco(){
     mostrarCopiar();
 }
 function mostrarMunieco(){
-    /*MUESTRO EL MUÑECO Y EL TEXTO REMOVIENDO LA CLASE OCULTAR QUE CREE EN EL CSS*/
+    /*MUESTRO LA SECCION MUÑECO REMOVIENDO LA CLASE OCULTAR*/
 
     munieco.classList.remove("ocultar");
     h3.classList.remove("ocultar");

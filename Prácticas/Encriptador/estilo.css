@@ -9,7 +9,7 @@
 
 html, body{
     background-color: #F3F5FC;
-    height: 98%;
+    height: 97%;
 }
 
 header{
@@ -25,17 +25,30 @@ header{
 .contenedor-dark{
     display: inline-flex;
     float: right;
-    margin-right: 1%;
+    margin-right: 15px;
+    margin-bottom: 5px;
 }
-.btn-dark, .btn-light, .btn-leer, .btn-silencio, .btn-usa, .btn-arg{
+.btn-dark, .btn-light, .btn-leer, .btn-silencio, .btn-arg, .btn-usa{
     background-color: #F3F5FC;
     color: #0A3871;
-    font-size: 18px;
+    font-size: 20px;
     border: none;
+    width: 26px;
+    height: 26px;
+}
+.btn-leer {
+    width: 32px;
 }
 .btn-light{
-    background-color: black;
+    background: url(bg.jpg);
     color: white;
+    width: 32px;
+    font-size: 19px;
+}
+.img-usa, .img-arg {
+    width: 22px;
+    height: 22px;
+    padding: 1px 0 0 0;
 }
 
 main{
@@ -73,7 +86,7 @@ main{
     color: #495057;
     opacity: 80%; 
     width: 83%;
-    margin: 0 0 2% auto;
+    margin: 0 3px 2% auto;
 }
 .advertencia:hover{
     font-size: 24px;
@@ -187,11 +200,11 @@ footer{
 }
 
 .dark{
-    background-color: black;
+    background: url(bg.jpg);
     color: white;
 }
 .dark-grey{
-    background-color: #3f3f3f;
+    background: url(bg.jpg);
     color: white;
     box-shadow: 1px 1px 5px 1px white;
 }
@@ -199,7 +212,7 @@ footer{
     color: white;
 }
 .dark-grey2{
-    background-color: grey;
+    background: url(bg.jpg);
     color: white;
     box-shadow: 1px 1px 5px 1px white;
 }
