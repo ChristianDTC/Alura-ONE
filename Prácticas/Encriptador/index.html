@@ -14,8 +14,12 @@
 
         <header class="logo">
 
-            <a href="https://www.aluracursos.com/" target="_blank"><img src="Logo.svg" alt="Logo Alura" class="img-logo"><img src="LogoW.svg" alt="Logo Alura Blanco" class="img-logo-w ocultar"></a>
+            <section>
 
+                <a href="https://www.aluracursos.com/" target="_blank"><img src="Logo.svg" alt="Logo Alura" class="img-logo"><img src="LogoW.svg" alt="Logo Alura Blanco" class="img-logo-w ocultar"></a>
+
+            </section>
+            
             <section class="contenedor-dark">
                 
                 <button class="btn-leer"><i class="fa-solid fa-volume-high"></i></button>
@@ -24,8 +28,8 @@
                 <button class="btn-dark"> <i class="fa-solid fa-moon"></i></button>
                 <button class="btn-light ocultar"><i class="fa-solid fa-sun"></i></button>
 
-                <button class="btn-usa"><img src="usa.ico" class="img-usa"></button>
-                <button class="btn-arg ocultar"><img src="arg.ico" class="img-arg"></button>
+                <button class="btn-usa"><img src="usa.ico" alt="bandera usa" class="img-usa"></button>
+                <button class="btn-arg ocultar"><img src="arg.ico" alt="bandera argentina" class="img-arg"></button>
                 
             </section>
             
@@ -37,10 +41,15 @@
             <section class="section-textarea">
 
                 <textarea class="textarea" placeholder="Ingrese el texto aquí"></textarea>
-
-                <p class="advertencia"><img src="iconoError.png"> Sólo letras minúsculas y sin acentos
-                </p>
                 
+                <article class="contenedor-advertencia">
+
+                    <img src="iconoError.png" alt="icono advertencia" class="img-advertencia">
+                    <p class="advertencia">Sólo letras minúsculas y sin acentos
+                    </p>
+
+                </article>
+                                
                 <article class="contenedor-btn">
                     <!-- <i class="fa-solid fa-lock"></i> candado -->
                     <button class="boton-encriptar">Encriptar</button>
@@ -83,7 +92,13 @@
     </body>
 
     <footer>
-        <p class="copyride"><a href="https://www.linkedin.com/in/christiandtc" target="_blank"><i class="fa-brands fa-linkedin"></i></a><a href="https://github.com/ChristianDTC" target="_blank"><i class="fa-brands fa-github"></i></a> &copyChristianDTC</p>
+        <p class="copyride">
+            <a href="https://www.linkedin.com/in/christiandtc" target="_blank">
+            <i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/ChristianDTC" target="_blank">
+            <i class="fa-brands fa-github"></i></a>
+            &copyChristianDTC
+        </p>
     </footer>
 
     <script src="encriptador.js"></script>
