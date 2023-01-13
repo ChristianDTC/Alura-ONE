@@ -43,7 +43,8 @@ btnSilencio.onclick = silenciar;
 btnArg.onclick = txtEspañol;
 btnUsa.onclick = txtIngles;
 
-/*VARIABLES DE CONTROL*/
+
+/*VARIABLE DE CONTROL*/
 var puedeLeer = true;
 
 
@@ -130,13 +131,6 @@ function leerTxt(){
     btnLeer.classList.add("ocultar");
     btnSilencio.classList.remove("ocultar");
 }
-function silenciar(){
-     /*SI PRESIONA EL BOTON LA VARIABLE DE CONTROL CAMBIA Y DESMUTEA EL  LECTOR DE TEXTO*/
-
-    puedeLeer = true;
-    btnLeer.classList.remove("ocultar");
-    btnSilencio.classList.add("ocultar");
-}
 function leer(texto){
     /*HAGO QUE LEEA EL TEXTO INDICADO*/
 
@@ -144,6 +138,13 @@ function leer(texto){
     mensaje.text = texto;
     mensaje.lang = "es-ES";
     window.speechSynthesis.speak(mensaje);
+}
+function silenciar(){
+    /*SI PRESIONA EL BOTON LA VARIABLE DE CONTROL CAMBIA Y DESMUTEA EL  LECTOR DE TEXTO*/
+
+   puedeLeer = true;
+   btnLeer.classList.remove("ocultar");
+   btnSilencio.classList.add("ocultar");
 }
 
 
@@ -163,8 +164,8 @@ function dark(){
     textarea.classList.add("dark-grey");
     sectionMunieco.classList.add("dark-grey");
     botonEncriptar.classList.add("dark-grey");
-    botonDesencriptar.classList.add("dark-grey2");
-    botonCopiar.classList.add("dark-grey2");
+    botonDesencriptar.classList.add("dark-grey");
+    botonCopiar.classList.add("dark-grey");
     logo.classList.add("ocultar");
     logoW.classList.remove("ocultar");
     btnDark.classList.add("ocultar");
@@ -187,8 +188,8 @@ function light(){
     textarea.classList.remove("dark-grey");
     sectionMunieco.classList.remove("dark-grey")
     botonEncriptar.classList.remove("dark-grey");
-    botonDesencriptar.classList.remove("dark-grey2");
-    botonCopiar.classList.remove("dark-grey2");
+    botonDesencriptar.classList.remove("dark-grey");
+    botonCopiar.classList.remove("dark-grey");
     logoW.classList.add("ocultar");
     logo.classList.remove("ocultar");
     btnLight.classList.add("ocultar");
@@ -197,7 +198,7 @@ function light(){
 }
 
 function txtIngles() {
-    /*CAMBIO LOS TEXTO AL INGLES*/
+    /*TRADUCE LOS TEXTO AL INGLES*/
     
     textarea.setAttribute("placeholder", "Enter the text here");
     advertencia.textContent = "Only lowercase letters and no accents";
@@ -212,7 +213,7 @@ function txtIngles() {
 }
   
 function txtEspañol(){
-    /*REINICIO LA PAGINA PARA VOLVER LOS TEXTOS AL ESPAÑOL*/
+    /*TRADUCE LOS TEXTOS AL ESPAÑOL*/
 
     textarea.setAttribute("placeholder", "Ingrese el texto aquí");
     advertencia.textContent = "Sólo letras minúsculas y sin acentos";
@@ -289,7 +290,7 @@ function ocultarCopiar(){
 
 
 function encriptarTexto(mensaje){
-    /*código de encriptación*/
+    /* CODIGO DE ENCRIPTACION */
 
     let texto = mensaje;
     let txtEncriptado = "";
@@ -304,7 +305,7 @@ function encriptarTexto(mensaje){
 }
 
 function desencriptarTexto(mensaje){
-    /*código de encriptación al reves*/
+    /*CODIGO DE DESENCRIPTACION*/
 
     let texto = mensaje;
     let txtDesencriptado = "";
