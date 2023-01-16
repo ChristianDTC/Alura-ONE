@@ -1,9 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
 
@@ -16,14 +13,13 @@ html, body{
 /*HEADER - LOGO - ICONOS*/
 header{
     width: 100%;
-    height: 1%;
+    height: 35px;
     display: flex;
     justify-content: space-between;
 }
 
 .logo{
     width: 100%;
-    margin: 1% auto 28px;
     margin-top: 1%;
     transition: 800ms;
 }
@@ -38,9 +34,7 @@ header{
 
 .contenedor-dark{
     display: inline-flex;
-    float: right;
     margin-right: 15px;
-    margin-bottom: 5px;
 }
 .btn-dark, .btn-light, .btn-leer, .btn-silencio, .btn-arg, .btn-usa{
     background-color: #F3F5FC;
@@ -72,27 +66,30 @@ main{
     width: 100%;
     height: 90%;
     display: flex;
-    justify-content: space-between;
 }
 
 /* SECCION TEXTAREA - ADVERTENCIA - BOTONES */
 .section-textarea{
     width: 70%;
-    margin: 5% 0 0 auto;
+    margin: 3% 0 0 auto;
 }
-.textarea{
+.contenedor-textarea{
     width: 75%;
     height: 68%;
     display: block;
     margin: 3% 8% 2% auto;
-    padding: 5px 0 0 15px;
+}
+.textarea{
+    width: 100%;
+    height: 100%;
     border: none;
     outline: none;
     resize: none;
     font-family: 'Inter', sans-serif;
-    font-size: 32px;
+    font-size: 30px;
     background-color: #F3F5FC;
     color: #0A3871;
+    padding: 1% 1% 2% 2%;
 }
 ::placeholder{ 
     color: #0A3871;
@@ -113,9 +110,6 @@ main{
 .advertencia{
     width: 100%;
 }
-.advertencia:hover{
-    font-size: 24px;
-}
 
 .contenedor-btn{
     width: 83%;
@@ -125,12 +119,12 @@ main{
     background-color: #0A3871;
     border-radius: 24px;
     color: white;
-    width: 40%;
+    width: 46%;
     height: 50px;
     border: 1px solid #0A3871;
-    font-size: 20px;
+    font-size: 22px;
     transition: 600ms all;
-    margin-right: 5%;
+    margin-right: 2%;
     cursor: pointer;
     box-shadow: 1px 1px 5px 1px grey;
 }
@@ -139,9 +133,9 @@ main{
     color: #0A3871;
 }
 .boton-desencriptar:hover, .boton-encriptar:hover, .boton-copiar:hover{
-    width: 43%;
+    width: 48%;
     height: 60px;
-    font-size: 25px;
+    font-size: 23px;
     text-transform: uppercase;
 }
 /* FIN SECCION TEXTAREA - ADVERTENCIA - BOTONES */
@@ -189,8 +183,7 @@ main{
     padding-top: 5%;
     box-sizing: border-box;
     overflow: auto;
-    text-align: justify;
-    font-size: 23px;
+    font-size: 26px;
 }
 
 .contenedor-copiar{
@@ -227,6 +220,9 @@ footer{
 .fa-brands:hover{
     transform: scale(2) rotate(360deg);
 }
+.estrellas{
+    font-size:14px;
+}
 /* FIN FOOTER */
 
 
@@ -248,3 +244,101 @@ footer{
     color: white;
 }
 /* FIN CLASES DE MODIFICACION */
+
+
+/* RESPONSIVE PARA CELULARES */
+@media screen and (max-width: 375px) {
+
+    body{
+        height: 933px;
+    }
+    main{
+    display: block;
+    }
+    .img-logo, .img-logo-w{
+        width: 80%;
+        margin-top: 5%;
+    }
+    .section-textarea{
+        width: 100%;
+        height: 70%;
+        margin: 0;
+    }
+    .contenedor-textarea{
+        width: 100%;
+        height: 90%;
+        margin: 10% auto 0;
+        padding: 0;
+    }
+    .textarea{
+        width: 100%;
+        height: 80%;
+        font-size: 22px;
+        margin: 5% 10%;
+    }
+    .contenedor-advertencia{
+        width: 100%;
+        display: flex;
+        margin: 0 0 2% 12%;
+    }
+    .img-advertencia, .advertencia{
+        width: 8px;
+        height: 8px;
+        color: #495057;
+        opacity: 80%;
+    }
+    .advertencia{
+        width: 100%;
+        font-size: 6px;
+    }
+
+    .contenedor-btn{
+        width: 100%;
+        margin: 0;
+    }
+    .boton-encriptar, .boton-desencriptar{
+        width: 100%;
+        margin: 0 0 3% 10%;
+        font-size: 18px;
+    }
+
+
+    .section-munieco{
+        width: 100%;
+        height: 30%;
+        margin: 30% 10%;
+    }
+    .contenedor-munieco{
+        display: none;
+    }
+    .contenedor-h3, .contenedor-p{
+        width: 100%;
+        height: 20%;
+    }
+    .contenedor-h3{
+        margin-top: 15%;
+        font-size: 18px;
+    }
+    .contenedor-p{
+        font-size: 16px;
+    }
+
+    .contenedor-tx-encriptado{
+        width: 80%;
+        height: 70%;
+        box-sizing: border-box;
+        overflow: auto;
+
+    }
+    .contenedor-copiar{
+        margin: 3% auto;
+    }
+    .boton-copiar{
+        width: 80%;
+    }
+
+    footer{
+        width: 100%;
+        margin: 36% auto 0 13%;
+    }
+}
