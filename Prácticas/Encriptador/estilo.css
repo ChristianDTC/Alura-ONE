@@ -249,16 +249,13 @@ footer{
 /* RESPONSIVE PARA CELULARES */
 @media screen and (max-width: 375px) {
 
-    body{
-        height: 933px;
-    }
     main{
     display: block;
     }
     .img-logo, .img-logo-w{
-        width: 80%;
         margin-top: 5%;
     }
+
     .section-textarea{
         width: 100%;
         height: 70%;
@@ -273,7 +270,8 @@ footer{
     .textarea{
         width: 100%;
         height: 80%;
-        font-size: 22px;
+        font-size: 28px;
+        font-family: 'Inter', sans-serif;
         margin: 5% 10%;
     }
     .contenedor-advertencia{
@@ -289,7 +287,7 @@ footer{
     }
     .advertencia{
         width: 100%;
-        font-size: 6px;
+        font-size: 10px;
     }
 
     .contenedor-btn{
@@ -298,47 +296,52 @@ footer{
     }
     .boton-encriptar, .boton-desencriptar{
         width: 100%;
-        margin: 0 0 3% 10%;
+        height: 35px;
+        margin-left: 10%;
         font-size: 18px;
+    }
+    .boton-encriptar{
+        margin-bottom: 2%;
     }
 
 
     .section-munieco{
         width: 100%;
-        height: 30%;
-        margin: 30% 10%;
+        height: 32%;
+        margin: 22% 10%;
     }
     .contenedor-munieco{
         display: none;
     }
     .contenedor-h3, .contenedor-p{
         width: 100%;
-        height: 20%;
+        height: 25%;
     }
     .contenedor-h3{
-        margin-top: 15%;
+        margin-top: 10%;
         font-size: 18px;
     }
     .contenedor-p{
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .contenedor-tx-encriptado{
         width: 80%;
-        height: 70%;
+        height: 80%;
+        font-size: 24px;
         box-sizing: border-box;
         overflow: auto;
-
     }
     .contenedor-copiar{
-        margin: 3% auto;
+        height: 1000%;
     }
     .boton-copiar{
-        width: 80%;
+        height: 30px;
+        font-size: 18px;
     }
 
     footer{
         width: 100%;
-        margin: 36% auto 0 13%;
+        margin: 28% 0 0 16%;
     }
 }
